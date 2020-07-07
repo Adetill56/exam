@@ -1,0 +1,45 @@
+{
+    "products": [{
+            "name": "авроапр",
+            "count": 2,
+            "status": "false",
+            "id": 1
+        },
+        {
+            "name": "Банан",
+            "count": 5,
+            "status": "true",
+            "id": 2
+        },
+        {
+            "name": "Сметана",
+            "count": 3,
+            "status": "true",
+            "id": 3
+        },
+        {
+            "name": "Шоколад",
+            "count": 1,
+            "status": "true",
+            "id": 4
+        },
+        {
+            "id": 5,
+            "name": "Печенье",
+            "count": 3,
+            "status": "true"
+        },
+        {
+            "name": "Огурец",
+            "count": "2",
+            "status": "true",
+            "id": 6
+        },
+        {
+            "name": "Огурец",
+            "count": "2",
+            "status": "true",
+            "id": 7
+        }
+    ]
+}

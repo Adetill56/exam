@@ -1,0 +1,22 @@
+<div class="container col-4">
+    <form [formGroup]="productForm">
+        <label for="productname">Наименование</label>
+        <input type="text" class="form-control" formControlName="name" id="productname">
+        <label for="productcount">Количество</label>
+        <input type="text" class="form-control" formControlName="count" id="productcount">
+        <label for="productstatus">Статус</label>
+        <ng-container *ngIf="id != null ; else elseTemplate">
+            <select class="custom-select" formControlName="status" id="productstatus">
+                <option [ngValue]="status.notBought">Не куплен</option>
+                <option [ngValue]="status.bought">Куплен</option>
+                 </select>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <select class="custom-select" formControlName="status" id="productstatus">
+                <option [ngValue]="status.notBought">Не куплен</option>
+                </select>
+        </ng-template>
+        <button class="btn btn-primary btn-sm mt-2" (click)="onSave()" [disabled]="productForm.invalid">Сохранить</button>
+        <button class="btn btn-danger mt-2 btn-sm ml-1" (click)="onDelete()" *ngIf="id != null">Удалить</button>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row  mt-2 font-weight-bold col-8">
+        <div class="col-1 px-0">
+            id
+        </div>
+        <div class="col-8 px-0">
+            Наименование
+        </div>
+        <div class="col-2 px-0">
+            Количество
+        </div>
+        <button class="btn btn-primary " (click)="onAdd()">Добавить</button>
+    </div>
+    <div class="list" *ngFor="let product of products">
+        <div class="row  mt-2">
+            <div class="col-8 d-flex px-0" [ngClass]="{'bg-success text-white' : checkStatus(product.status)}">
+                <div class="col-1">
+                    {{product.id}}
+                </div>
+                <div class="col-8">
+                    {{product.name}}
+                </div>
+                <div class="col-2">
+                    {{product.count}}
+                </div>
+
+            </div>
+            <div class="col-1">
+                <button class="btn btn-primary btn-sm" (click)="onEdit(product.id)">Редактировать</button>
+                <button class="btn btn-danger btn-sm mt-1" (click)="onDelete(product.id)">Удалить</button>
+                <button class="btn btn-success btn-sm mt-1" (click)="onChangeStatus(product)" *ngIf="product.status == 'false'">Куплено</button>
+            </div>
+        </div>
+    </div>
+</div>
